@@ -1,0 +1,22 @@
+
+<div class="content">
+    <h1> Add Warehouse</h1>
+    <form (ngSubmit)="AddWarehouse(addWarehouseForm)" #addWarehouseForm="ngForm">
+        <div class="element" >
+          <label for="exampleInputEmail1">Add Warehouse name</label><br/>
+          <mat-form-field>
+          <input type="Text" matInput [(ngModel)]="warehouse.warehouseName" name="warehouseName"  id="WarehouseName" placeholder="Enter warehouse name" required>
+          </mat-form-field>
+        </div>
+  
+        <div class="element">
+          <label for="exampleInputEmail1">Address</label><br/>
+          <mat-form-field>
+          <input type="Text" matInput [(ngModel)]="warehouse.address" name="address"  id="Address" required placeholder="address">
+          </mat-form-field>
+        </div>
+  
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  

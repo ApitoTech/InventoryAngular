@@ -1,0 +1,17 @@
+.modal-body {
+  width: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'sans-serif';
+}
+input {
+  margin-bottom: 2px;
+}
+
+.space {
+
+  margin:2px;
+  padding: 2px;
+  height: 2px;
+}

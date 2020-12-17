@@ -1,0 +1,179 @@
+ <!-- ======= Header ======= -->
+ <header id="header" class=" d-flex align-items-center  ">
+  <div class="container d-flex align-items-center">
+
+    <div class="logo mr-auto">
+
+      <h1 class="text-light"><a href="index.html">Apito Technologies</a></h1>
+      <h5 class="text-light"><a href="index.html">Digitalizing Status Quo.</a></h5>
+      <br>
+    </div>
+
+        <li><a href="#contact">Contact</a></li>
+
+
+
+  </div>
+</header><!-- End Header -->
+
+
+<!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
+
+    <div id="heroCarousel" class="container carousel carousel-fade" data-ride="carousel">
+
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="carousel-container">
+            <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Apito</span></h2>
+            <p class="animate__animated fanimate__adeInUp"></p>
+            <!-- <h1>login here</h1> -->
+            <div class="container" class="height: 250px; margin-right:100px;">
+              <div >
+              <form>
+                  <!-- <div class="imgcontainer">
+                    <img src="/home/abheesh/Community/inventory/src/app/images/Apito.jpg" alt="Avatar" class="avatar">
+                  </div> -->
+
+                  <div class="container">
+                     <div class="group">
+                      <mat-form-field>
+                    <input type="text" matInput placeholder="Enter Username" id="input" name="username" [(ngModel)]="username"required>
+                     </mat-form-field>
+                     </div>
+
+                    <mat-form-field>
+                    <input type="password" matInput placeholder="Enter Password" name="password" [(ngModel)]="password" required>
+                    </mat-form-field>
+
+                    <button (click)="Route()" class="btn btn-info" type="submit">Login</button>
+                    <!-- <label>
+                      <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label> -->
+                  </div>
+
+                  <!-- <div class="container" style="background-color:#f1f1f1">
+                    <button type="button" class="cancelbtn">Cancel</button>
+                    <span class="psw">Forgot <a href="#">password?</a></span>
+                  </div> -->
+                </form>
+              </div>
+              </div>
+          </div>
+        </div>
+        </div>
+
+
+
+</section><!-- End Hero -->
+
+
+<main id="main">
+
+  <!-- ======= Cta Section ======= -->
+  <section id="cta" class="cta">
+    <div class="container">
+
+      <div class="row" data-aos="zoom-out">
+        <div class="col-lg-9 text-center text-lg-left">
+          <h3>Call To Action</h3>
+          <p> As John Maxwell said, "Change is inevitable, Growth is Optional". Your business could be in jeopardy if it doesn't cope up with the digital changes. Contact us to get help on transfering your business to the digital world and solve your digital challenges.</p>
+        </div>
+        <div class="col-lg-3 cta-btn-container text-center">
+          <a class="cta-btn align-middle" href="#contact">Call To Action</a>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End Cta Section -->
+
+
+  <!-- ======= Contact Section ======= -->
+  <section id="contact" class="contact">
+    <div class="container">
+
+      <div class="section-title" data-aos="zoom-out">
+        <h2>Contact</h2>
+        <p>Contact Us</p>
+      </div>
+
+      <div class="row mt-5">
+
+        <div class="col-lg-4" data-aos="fade-right">
+          <div class="info">
+            <div class="address">
+              <i class="icofont-google-map"></i>
+              <h4>Location:</h4>
+              <p>Hejjala Bangalore, India.</p>
+            </div>
+
+            <div class="email">
+              <i class="icofont-envelope"></i>
+              <h4>Email:</h4>
+              <p>sales@apito.in</p>
+            </div>
+
+            <div class="phone">
+              <i class="icofont-phone"></i>
+              <h4>Call:</h4>
+              <p>+91 8892075276</p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left">
+
+          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <div class="form-row">
+              <div class="col-md-6 form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validate"></div>
+              </div>
+              <div class="col-md-6 form-group">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validate"></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+              <div class="validate"></div>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+              <div class="validate"></div>
+            </div>
+            <div class="mb-3">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your message has been sent. Thank you!</div>
+            </div>
+            <div class="text-center"><button type="submit">Send Message</button></div>
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Contact Section -->
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+  <div class="container">
+    <h3>Apito Technologies</h3>
+    <p>Website Creation | Online Inventory Managment | Moible Application</p>
+    <div class="social-links">
+      <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+      <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+      <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+      <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+      <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+    </div>
+
+  </div>
+</footer><!-- End Footer -->

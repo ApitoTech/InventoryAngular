@@ -1,0 +1,53 @@
+<!--   -->
+<div class="d-flex justify-content-between p-2">
+  <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="loadPage($event)">
+    <ng-template ngbPaginationNumber let-p>{{ getPageSymbol(p) }}</ng-template>
+  </ngb-pagination>
+</div>
+
+<div class="col-md-6 mb-4" class="float-left">
+  <select [(ngModel)]="selectedOption" (ngModelChange)="onChange()"  class="btn btn-rounded" name="id" routerLinkActive="list-item-active" routerLink="/posts" role="button" class="form-control">
+    <option *ngFor="let warehouse of warehouses"  [value]="warehouse.warehouseId" [selected]="warehouse.warehouseId===1">{{warehouse.warehouseName}}</option>
+  </select>
+</div>
+  <div class="col-md-6 mb-4" class="float-right">
+    <input  type="text" [(ngModel)]="searchedKeyword" placeholder="Search" aria-label="Search"> &nbsp; &nbsp;
+    <button class="btn btn-success btn-rounded btn-sm my-0 waves-effect waves-light" (click)="exportAsXLSX()">Export Excel</button>
+    <!-- <form class="form-inline md-form mr-auto">
+
+      <button class="btn btn-success btn-rounded btn-sm my-0 waves-effect waves-light" type="submit">Search</button>
+    </form> -->
+  </div>
+
+
+<!-- </div> -->
+<br/><br/>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+
+    <th scope="col">NAME</th>
+    <th scope="col">DESCRIPTION OF ITEMS</th>
+    <th scope="col">TOTAL QUANTITY</th>
+    <th scope="col">Type</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of items | filter:searchedKeyword">
+
+    <td>
+      <!-- {{ item.itemName }} -->
+      <a [routerLink] ="['/audititem', item.itemId,item.itemName]" routerLinkActive="router-link-active" >{{ item.itemName }}</a>
+    </td>
+    <td>{{ item.itemSubtype }}</td>
+    <td>{{ item.inStock | number }}</td>
+    <td>{{ item.type}}</td>
+    <td><button mat-raised-button class="modifiy" (click)="openModal(item)">Modify</button></td>
+    <td><button mat-raised-button class="modifiy" (click)="openTransferModal(item)">Transfer</button></td>
+    <td><button mat-raised-button class="modifiy" (click)="deleteItem(item.itemId,item.itemName,selectedOption)">Delete</button></td>
+  </tr>
+  </tbody>
+</table>
+
+

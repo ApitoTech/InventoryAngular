@@ -1,0 +1,33 @@
+
+
+
+<div class="modal-header" >
+    <h2 class="modal-title" id="modal-basic-title">Transfer Item </h2>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+  
+    <label>Item Name:</label>
+    <input [(ngModel)]="user.itemName" type="text" class="form-control" >
+  
+    <label>Quantity:</label>
+    <input (keypress)="numberOnly($event)"  type="text" ngModel class="form-control" [(ngModel)]="result"  maxlength="5">
+
+    <label>Warehouse:</label>
+    <select [(ngModel)]="selectedOption" class="btn btn-rounded" name="id"   role="button" class="form-control">
+      <option *ngFor="let warehouse of warehouses"  [value]="warehouse.warehouseId" [selected]="warehouse.warehouseId===1">{{warehouse.warehouseName}}</option>
+    </select>
+    <span class="space"></span>
+  
+    <tr>
+    <button (click)="transfer()" type="submit" class="btn btn-success w-25">transfer</button>
+    <span class="space"></span>
+  
+    
+    </tr>
+    <hr>
+    
+  </div>
+  

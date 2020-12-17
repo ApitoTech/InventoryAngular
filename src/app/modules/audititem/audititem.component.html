@@ -1,0 +1,52 @@
+<mat-form-field>
+	<mat-label>From Date</mat-label>
+	<input matInput [matDatepicker]="picker1" autocomplete="off"  placeholder="and placeholder" [(ngModel)]="fromDate">
+	<mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+	<mat-datepicker #picker1 color="primary"></mat-datepicker>
+</mat-form-field>
+&nbsp; &nbsp;&nbsp; &nbsp;
+<mat-form-field>
+	<mat-label>To Date</mat-label>
+	<input matInput [matDatepicker]="picker2" autocomplete="off" [(ngModel)]="toDate">
+	<mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+	<mat-datepicker #picker2 color="primary"></mat-datepicker>
+</mat-form-field>
+&nbsp; &nbsp;&nbsp; &nbsp;
+
+  <!-- <label for="address">Item Name:</label> -->
+  <input type="text"   *ngIf="isShowName" [disabled]="isDisableName" [(ngModel)]="itemName">
+
+<!-- <select [(ngModel)]="selectedOption"  class="btn btn-rounded" class="select" style="max-width: 200px;" >
+  <option *ngFor="let action of actions"  [value]="action.name" >{{action.name}}</option>
+</select>&nbsp; &nbsp;&nbsp; &nbsp;  -->
+<!-- <input  type="text" [(ngModel)]="searchedKeyword" placeholder="Search" aria-label="Search"> &nbsp; &nbsp; -->
+<button class="btn btn-success btn-rounded btn-sm my-0 waves-effect waves-light" (click)="searchAudit()">Search</button>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Item Name</th>
+      <th scope="col">Action</th>
+      <th scope="col">User Name</th>
+      <th scope="col">Value</th>
+      <th scope="col">Date Modified</th>
+      <th scope="col">Value After Change</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let audit of audits; let i = index">
+      <th>{{i+1}}</th>
+      <td>
+         {{ audit.itemName }} 
+      </td>
+      <td>{{ audit.action }}</td>
+      <td>{{ audit.userName }}</td>
+      <td>{{ audit.value}}</td>
+      <td>{{ audit.dateModified }}</td>
+      <td>{{audit.inStock}}</td>
+    </tr>
+    </tbody>
+  </table>
+  
+  
+  

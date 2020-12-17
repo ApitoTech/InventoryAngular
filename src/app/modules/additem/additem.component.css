@@ -1,0 +1,56 @@
+
+ .element {
+    display: block;
+
+
+  }
+
+  .element label {
+    font-size: large;
+    margin: 4px;
+    padding: 4px;
+    display: block;
+  }
+
+  .element mat-form-field {
+
+    font-size: medium;
+    margin: 4px;
+    padding: 4px;
+    display: block;
+
+
+    width: 100%;
+    border-color:#BBDAFB ;
+    border-width: medium;
+  }
+
+  .content{
+     padding: 30px;
+    /*border-color: black;
+    border-width: medium;
+    width: fit-content;
+    height: fit-content;
+    border-style: solid;
+   */
+  }
+  ::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: black !important;
+   }
+
+
+  ::ng-deep .mat-form-field-label {
+    /*change color of label*/
+    color: black !important;
+   }
+
+   ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: black !important;
+  }
+
+  ::ng-deep.mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color: black !important;
+  }

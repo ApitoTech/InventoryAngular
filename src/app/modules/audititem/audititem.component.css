@@ -1,0 +1,8 @@
+ ng-select.custom {
+     min-height: 0px;
+     max-width: 350px;
+ }
+
+ ng-select.dropdown {
+     border: 1px solid black;
+ } 

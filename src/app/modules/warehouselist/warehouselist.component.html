@@ -1,0 +1,26 @@
+  <br/><br/>
+  
+  <table class="table table-striped">
+    <thead>
+    <tr>
+  
+      <th scope="col">NAME</th>
+      <th scope="col">Address</th>
+     
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let warehouse of warehouses ">
+  
+      <td>
+         {{ warehouse.warehouseName }}
+      </td>
+      <td>{{ warehouse.address }}</td>
+      <td><button mat-raised-button class="modifiy" (click)="openModal(warehouse)">Modify</button></td>
+      <td><button mat-raised-button class="modifiy" (click)="deleteItem(warehouse.warehouseName,warehouse.warehouseId)">Delete</button></td>
+    </tr>
+    </tbody>
+  </table>
+  
+  
+  

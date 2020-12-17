@@ -1,0 +1,40 @@
+<div class="content">
+  <h1> Add Item</h1>
+  <form (ngSubmit)="AddItem(addItemForm)" #addItemForm="ngForm">
+      <div class="element" >
+
+        <label for="exampleInputEmail1">Add name</label>
+        <mat-form-field>
+        <input type="Text" matInput [(ngModel)]="item.itemName" name="itemName"  id="Item" placeholder="Enter Item name" required>
+        </mat-form-field>
+      </div>
+
+
+      <div class="element">
+        <label for="exampleInputPassword1">Add Description</label>
+
+        <mat-form-field>
+        <input type="Text" matInput [(ngModel)]="item.itemSubtype" name="itemSubtype"  id="Description" required placeholder="Description for the item">
+        </mat-form-field>
+      </div>
+
+      <div class="element">
+        <label>Select Warehouse</label>
+        <mat-form-field>
+        <mat-select [(ngModel)]="item.warehouseID"  name="warehouseID" required placeholder="--Warehouse--" >
+          <!-- <option value="0">--Please Select Warehouse--</option> -->
+          <mat-option *ngFor="let warehouse of warehouses"  [value]="warehouse.warehouseId">{{warehouse.warehouseName}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      </div>
+      <div class="element">
+        <label>Select Type</label>
+        <mat-form-field>
+        <mat-select [(ngModel)]="item.type" required name="type" placeholder="--Type--">
+          <mat-option *ngFor="let ty of type"  [value]="ty.name">{{ty.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>

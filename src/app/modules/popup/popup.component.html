@@ -1,0 +1,34 @@
+
+
+
+<div class="modal-header" >
+  <h2 class="modal-title" id="modal-basic-title">Item Record</h2>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+
+  <label>Item Name:</label>
+  <input [(ngModel)]="user.itemName" type="text" class="form-control" readonly>
+
+  <label>Quantity:</label>
+  <input (keypress)="numberOnly($event)"  type="text" ngModel class="form-control" [(ngModel)]="result"  maxlength="5">
+
+  <span class="space"></span>
+
+  <tr>
+  <button (click)="passAdd()" type="submit" class="btn btn-success w-25">Add</button>
+  <span class="space"></span>
+
+  <button (click)="passSub()" type="submit" class="btn btn-danger w-25 float-right">Remove</button>
+  <span class="space"></span>
+  </tr>
+  <hr>
+  <!-- <tr>
+  <button (click)="passAdd()" type="submit" class="btn btn-info w-25" [disabled]>Return</button>
+  <span class="space"></span>
+
+  <button (click)="passAdd()" type="submit" class="btn btn-dark w-25 float-right" [disabled]>Damage</button>
+  </tr> -->
+</div>
