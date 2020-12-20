@@ -1,20 +1,20 @@
 <mat-form-field>
 	<mat-label>From Date</mat-label>
-	<input matInput [matDatepicker]="picker1" autocomplete="off"  placeholder="and placeholder" [(ngModel)]="fromDate">
+	<input matInput [matDatepicker]="picker1" autocomplete="off"  placeholder="and placeholder" [(ngModel)]="fromDate" >
 	<mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
 	<mat-datepicker #picker1 color="primary"></mat-datepicker>
 </mat-form-field>
 &nbsp; &nbsp;&nbsp; &nbsp;
 <mat-form-field>
 	<mat-label>To Date</mat-label>
-	<input matInput [matDatepicker]="picker2" autocomplete="off" [(ngModel)]="toDate">
+	<input matInput [matDatepicker]="picker2"  autocomplete="off" [(ngModel)]="toDate">
 	<mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
 	<mat-datepicker #picker2 color="primary"></mat-datepicker>
 </mat-form-field>
 &nbsp; &nbsp;&nbsp; &nbsp;
 
   <!-- <label for="address">Item Name:</label> -->
-  <input type="text"   *ngIf="isShowName" [disabled]="isDisableName" [(ngModel)]="itemName">
+  <input type="text"   *ngIf="isShowName" [disabled]="isDisableName" [(ngModel)]="itemName" >
 
 <!-- <select [(ngModel)]="selectedOption"  class="btn btn-rounded" class="select" style="max-width: 200px;" >
   <option *ngFor="let action of actions"  [value]="action.name" >{{action.name}}</option>

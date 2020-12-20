@@ -26,6 +26,7 @@
     "@fortawesome/fontawesome-free": "^5.15.1",
     "@ng-bootstrap/ng-bootstrap": "^7.0.0",
     "bootstrap": "^4.5.3",
+    "chokidar": "^3.4.3",
     "file-saver": "^2.0.2",
     "highcharts": "^8.2.2",
     "highcharts-angular": "^2.8.0",
@@ -38,12 +39,12 @@
     "zone.js": "~0.10.3"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.1002.0",
+    "@angular-devkit/build-angular": "^0.1002.1",
     "@angular/cli": "~10.2.0",
     "@angular/compiler-cli": "~10.2.1",
-    "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~5.0.0",

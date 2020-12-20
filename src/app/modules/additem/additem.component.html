@@ -5,7 +5,7 @@
 
         <label for="exampleInputEmail1">Add name</label>
         <mat-form-field>
-        <input type="Text" matInput [(ngModel)]="item.itemName" name="itemName"  id="Item" placeholder="Enter Item name" required>
+        <input type="Text" matInput [(ngModel)]="item.itemName" name="itemName" maxlength="20" id="Item" placeholder="Enter Item name" required>
         </mat-form-field>
       </div>
 
@@ -14,7 +14,7 @@
         <label for="exampleInputPassword1">Add Description</label>
 
         <mat-form-field>
-        <input type="Text" matInput [(ngModel)]="item.itemSubtype" name="itemSubtype"  id="Description" required placeholder="Description for the item">
+        <input type="Text" matInput [(ngModel)]="item.itemSubtype" name="itemSubtype" maxlength="50" id="Description" required placeholder="Description for the item">
         </mat-form-field>
       </div>
 
