@@ -16,16 +16,16 @@ export class AddwarehouseComponent implements OnInit {
   itemName: string="";
   itemSubtype: string="";
   submitted = false;
-  
+
 
 
   constructor(
     private router: Router,private service : CommonService) { }
 
   ngOnInit() {
-   
+
   }
-  
+
   AddWarehouse(addWarehouseForm ){
   if(this.warehouse.warehouseName == null){
 
@@ -37,7 +37,7 @@ export class AddwarehouseComponent implements OnInit {
   let resp=this.service.addWarehouse(this.warehouse);
   resp.subscribe((data)=>this.message=data
   );
-  alert('One Warehouse Successfully');
+  alert('One Warehouse Successfully Added');
   addWarehouseForm.form.reset();
   }
  }

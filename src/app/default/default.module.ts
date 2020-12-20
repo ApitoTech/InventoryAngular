@@ -24,6 +24,7 @@ import { DefaultRoutingModule } from '../default/default.routing';
 import {MatSelectModule} from '@angular/material/select';
 //import {FormControl } from '@angular/forms'
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     MatInputModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatIconModule
+    MatIconModule,
+    MatRadioModule,
   //  FormControl,
   ],
   providers: [

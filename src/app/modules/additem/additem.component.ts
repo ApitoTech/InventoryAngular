@@ -46,10 +46,10 @@ AddItem(addItemForm ){
   }
   else{
 
-  this.service.addItem(this.item).subscribe(res => {
-    this.message=res;
-    alert(this.message);
-  });
+  let resp=this.service.addItem(this.item);
+  resp.subscribe((data)=>this.message=data
+  );
+  alert('One Item Added Successfully');
   addItemForm.form.reset();
   }
  }

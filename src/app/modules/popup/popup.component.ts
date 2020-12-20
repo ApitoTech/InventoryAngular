@@ -8,6 +8,7 @@ import { CommonService } from 'src/app/commonServices';
 import { Router } from '@angular/router';
 import { userService } from 'src/app/userService'
 
+
 @Component({
   selector: 'app-popup',
   templateUrl: './popup.component.html',
@@ -18,6 +19,12 @@ export class PopupComponent implements OnInit {
   @Input() public user;
   @Output() passEntry: EventEmitter<any> = new EventEmitter();
 
+  isEditName= false;
+  isEditQuantity=true;
+  isTransfer=false;
+  selected:any;
+  selectedOption: string=1+'';
+  warehouses:any;
 
   numberOnly(event): boolean {
     const charCode = (event.which) ? event.which : event.keyCode;
@@ -34,8 +41,72 @@ export class PopupComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.user);
+    this.commonService.getWarehouseData().subscribe(res=>{
+       this.warehouses=res;
+       }
+       );
   }
   public result;
+
+  radioChange(e: string) {
+   
+    if( e === "name"){
+     this.isEditName=true;
+     this.isEditQuantity=false;
+     this.isTransfer=false;
+    }else if(e === "quantity"){
+      this.isTransfer=false;
+      this.isEditQuantity=true;
+      this.isEditName=false;
+    }else if(e === "transfer"){
+      this.isEditName=false;
+      this.isEditQuantity=false;
+      this.isTransfer=true;
+    }
+}
+
+saveName(){
+  this.user.action = "Modify Name";
+  let resp=this.commonService.modifyName(this.user);
+  resp.subscribe((data)=>data
+  );
+  alert('Updated successfully');
+  this.activeModal.dismiss('cross click');
+}
+
+transfer() {
+
+  if(this.result == null)
+  {
+    this.user.inStock -= 0;
+    console.log("-1")
+    return false;
+  }
+  if(this.user.warehouseID == this.selectedOption){
+    alert('Cannot transfer to same warehouse ');
+    return false;
+  }
+
+  var data = this.user.inStock- Number(this.result);
+  if(data < 0){
+
+    alert("The Entered quantity is more.");
+    return false;
+  }
+
+
+  this.user.inStock = data;
+  this.user.action = "transfer";
+  this.user.value=this.result;
+  this.user.userId=this.uService.getValue();
+  this.user.warehouseID=this.selectedOption;
+  let resp=this.commonService.tansferItem(this.user);
+  resp.subscribe((data)=>data
+  );
+  alert('transfer successfully');
+  this.activeModal.dismiss('cross click');
+
+}
 
   passAdd() {
     // if(this.result == null)

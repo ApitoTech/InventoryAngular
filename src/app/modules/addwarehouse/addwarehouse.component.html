@@ -5,18 +5,17 @@
         <div class="element" >
           <label for="exampleInputEmail1">Add Warehouse name</label><br/>
           <mat-form-field>
-          <input type="Text" matInput [(ngModel)]="warehouse.warehouseName" name="warehouseName"  id="WarehouseName" placeholder="Enter warehouse name" required>
+          <input type="Text" matInput [(ngModel)]="warehouse.warehouseName" name="warehouseName" maxlength="25"  id="WarehouseName" placeholder="Enter warehouse name" required>
           </mat-form-field>
         </div>
-  
+
         <div class="element">
           <label for="exampleInputEmail1">Address</label><br/>
           <mat-form-field>
-          <input type="Text" matInput [(ngModel)]="warehouse.address" name="address"  id="Address" required placeholder="address">
+          <input type="Text" matInput [(ngModel)]="warehouse.address" name="address"  maxlength="255" id="Address" required placeholder="address">
           </mat-form-field>
         </div>
-  
+
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
-  

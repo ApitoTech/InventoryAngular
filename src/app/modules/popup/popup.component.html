@@ -9,21 +9,58 @@
 </div>
 <div class="modal-body">
 
-  <label>Item Name:</label>
-  <input [(ngModel)]="user.itemName" type="text" class="form-control" readonly>
+  <mat-radio-group>
+    <mat-radio-button color="primary" value="quantity" (click)="radioChange('quantity')" checked>Edit Quantity</mat-radio-button> &nbsp; &nbsp;
+    <mat-radio-button color="primary" value="name" (click)="radioChange('name')" >Edit Name</mat-radio-button> &nbsp; &nbsp;
+    <mat-radio-button color="primary" value="transfer" (click)="radioChange('transfer')">Transfer</mat-radio-button>
+  </mat-radio-group>
 
+  <div *ngIf="isEditName" >  
+  <label>Item Name:</label>
+  <input [(ngModel)]="user.itemName" type="text" class="form-control" >
+  <label>Desc Of Item:</label>
+  <input [(ngModel)]="user.itemSubtype" type="text" class="form-control" >
+  <span class="space"></span>
+  </div>
+
+  <div *ngIf="isEditQuantity" >
+    <label>Item Name:</label>
+  <input [(ngModel)]="user.itemName" type="text" class="form-control" readonly>
   <label>Quantity:</label>
   <input (keypress)="numberOnly($event)"  type="text" ngModel class="form-control" [(ngModel)]="result"  maxlength="5">
-
   <span class="space"></span>
+  </div>
 
-  <tr>
+  <div *ngIf="isTransfer">
+    <label>Item Name:</label>
+    <input [(ngModel)]="user.itemName" type="text" class="form-control" readonly>
+  
+    <label>Quantity:</label>
+    <input (keypress)="numberOnly($event)"  type="text" ngModel class="form-control" [(ngModel)]="result"  maxlength="5">
+
+    <label>Warehouse:</label>
+    <select [(ngModel)]="selectedOption" class="btn btn-rounded" name="id"   role="button" class="form-control">
+      <option *ngFor="let warehouse of warehouses"  [value]="warehouse.warehouseId" [selected]="warehouse.warehouseId===1">{{warehouse.warehouseName}}</option>
+    </select>
+    <span class="space"></span>
+  </div>
+
+  <tr *ngIf="isEditQuantity">
   <button (click)="passAdd()" type="submit" class="btn btn-success w-25">Add</button>
   <span class="space"></span>
 
   <button (click)="passSub()" type="submit" class="btn btn-danger w-25 float-right">Remove</button>
   <span class="space"></span>
   </tr>
+
+  <tr *ngIf="isEditName">
+    <button (click)="saveName()" type="submit" class="btn btn-success w-25">Save Name</button>
+    <span class="space"></span>
+  </tr>
+  <tr *ngIf="isTransfer">
+    <button (click)="transfer()" type="submit" class="btn btn-success w-25">transfer</button>
+    <span class="space"></span>
+    </tr>
   <hr>
   <!-- <tr>
   <button (click)="passAdd()" type="submit" class="btn btn-info w-25" [disabled]>Return</button>

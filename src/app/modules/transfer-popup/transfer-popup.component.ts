@@ -55,9 +55,16 @@ export class TransferPopupComponent implements OnInit {
       alert('Cannot transfer to same warehouse ');
       return false;
     }
-   
-    var data = Number(this.result);
-    this.user.inStock -= data;
+
+    var data = this.user.inStock- Number(this.result);
+    if(data < 0){
+
+      alert("The Entered quantity is more.");
+      return false;
+    }
+
+
+    this.user.inStock = data;
     this.user.action = "transfer";
     this.user.value=this.result;
     this.user.userId=this.uService.getValue();
@@ -70,48 +77,7 @@ export class TransferPopupComponent implements OnInit {
 
   }
 
-  passSub() {
 
-  //  if(this.result == null)
-  //   {
-  //     this.user.population -= 0;
-  //     console.log("-1")
-  //     return false;
-  //   }
-  // var final : number ;
-  // final = this.user.population - this.result;
-
-  // if(final < 0){
-  //     console.log("Invalid Quantity");
-  //     return false;
-  // }
-  // this.user.population = final;
-
-    if(this.result == null)
-    {
-      this.user.inStock -= 0;
-      console.log("-1")
-      return false;
-    }
-  var final : number ;
-  final = this.user.inStock - this.result;
-
-  if(final < 0){
-      console.log("Invalid Quantity");
-      alert("Entered value is greater than stock");
-      return false;
-  }
-
-  this.user.inStock = final;
-  this.user.action = "sub";
-  this.user.value=this.result;
-  this.user.userId=this.uService.getValue();
-  let resp=this.commonService.modifyItem(this.user);
-  resp.subscribe((data)=>data
-  );
-  alert('Removed successfully');
-  this.activeModal.dismiss('cross click');
-  }
 
   passBack() {
     this.passEntry.emit(this.user);

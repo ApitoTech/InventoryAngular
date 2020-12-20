@@ -44,7 +44,7 @@
     <td>{{ item.inStock | number }}</td>
     <td>{{ item.type}}</td>
     <td><button mat-raised-button class="modifiy" (click)="openModal(item)">Modify</button></td>
-    <td><button mat-raised-button class="modifiy" (click)="openTransferModal(item)">Transfer</button></td>
+    <!-- <td><button mat-raised-button class="modifiy" (click)="openTransferModal(item)">Transfer</button></td> -->
     <td><button mat-raised-button class="modifiy" (click)="deleteItem(item.itemId,item.itemName,selectedOption)">Delete</button></td>
   </tr>
   </tbody>

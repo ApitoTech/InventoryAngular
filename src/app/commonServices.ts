@@ -9,14 +9,14 @@ export class CommonService {
 
   //private baseUrl = 'http://ec2-18-220-112-92.us-east-2.compute.amazonaws.com:8080/InventoryApp-1.0/';
 
-   private baseUrl  = 'http://localhost:9191/';
+  // private baseUrl  = 'http://localhost:9191/';
   //local aws
-  //private baseUrl = 'http://ec2-3-23-79-198.us-east-2.compute.amazonaws.com:8080/InventoryApp-1.0/';
+  private baseUrl = 'http://ec2-3-23-79-198.us-east-2.compute.amazonaws.com:8080/InventoryApp-1.0/';
   constructor(private http:HttpClient) { }
 
 
   public addItem(item: Object) : Observable<Object> {
-     return this.http.post(`${this.baseUrl}addItem`, item , {responseType: 'text'});
+     return this.http.post(`${this.baseUrl}addItem`, item);
   }
   
   public addWarehouse(warehouse: Object) : Observable<Object> {
@@ -34,6 +34,10 @@ export class CommonService {
 
   public modifyItem(item){
     return this.http.post(`${this.baseUrl}modifyItem`, item);
+  }
+
+  public modifyName(item){
+    return this.http.post(`${this.baseUrl}modifyName`, item);
   }
 
   public tansferItem(item){

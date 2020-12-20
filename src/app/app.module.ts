@@ -30,6 +30,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { WarehouselistComponent } from './modules/warehouselist/warehouselist.component';
 import { WarehousePopupComponent } from './modules/warehouse-popup/warehouse-popup.component';
 import { TransferPopupComponent } from './modules/transfer-popup/transfer-popup.component';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 
@@ -62,6 +63,7 @@ import { TransferPopupComponent } from './modules/transfer-popup/transfer-popup.
     MatNativeDateModule,
     MatFormFieldModule,
     MatIconModule,
+    MatRadioModule,
   ],
   providers: [ExcelExportService,userService],
   bootstrap: [AppComponent,
